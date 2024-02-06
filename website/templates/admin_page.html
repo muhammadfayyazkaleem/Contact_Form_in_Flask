@@ -14,6 +14,16 @@
 <body>
   <div class="container mt-4">
     <h1>Admin Page</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Hi Developer,</strong> {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+      {% endif %} 
+    {% endwith %}
     <div class="row">
       {% for record in records %}
         <div class="col-md-6">
