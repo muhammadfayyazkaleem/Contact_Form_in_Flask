@@ -25,7 +25,7 @@
 </head>
 <body>
   <div class="container mt-4">
-    <a type="button" href="/logout" class="logout-button">Logout</a>
+    <a type="button" href="/logout" class="logout-button btn btn-success">Logout</a>
     <h1>Admin Page</h1>
     {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -46,7 +46,7 @@
               <h6 class="card-subtitle mb-2 text-body-secondary"><b>Name:</b>  {{ record.name }}</h6>
               <h6 class="card-subtitle mb-2 text-body-secondary"><b>Email:</b>  {{ record.email }}</h6>
               <p class="card-text"><b>Message</b> <br>{{ record.message }}</p>
-              <a href="#" class="btn btn-primary">Reply</a>
+              <a href="/response/{{ record.email }}" class="btn btn-primary">Reply</a>
             </div>
           </div>
         </div>
